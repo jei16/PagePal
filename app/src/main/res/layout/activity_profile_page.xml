@@ -167,7 +167,7 @@
                         android:textColor="@color/white"
                         android:textSize="40sp"
                         android:layout_gravity="end"
-                        android:textStyle="bold|italic" />
+                        android:textStyle="bold" />
 
 
                 </LinearLayout>
@@ -183,32 +183,61 @@
                 app:layout_constraintTop_toBottomOf="@+id/headerofProfile">
 
 
-
-
-
-                <TextView
-                    android:id="@+id/borrow"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:id="@+id/borrowerRating"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="45dp"
-                    android:text="BORROWER RATING:"
-                    android:textColor="@color/black"
-                    android:textSize="12sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toTopOf="parent">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                    <TextView
+                        android:id="@+id/borrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="45dp"
+                        android:text="BORROWER RATING:"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:layout_marginTop="3dp"
+                        android:src="@drawable/rating"/>
+
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="65dp"
+                    android:orientation="horizontal"
                     android:layout_marginTop="24dp"
-                    android:text="LENDER RATING:"
-                    android:textColor="@color/black"
-                    android:textSize="12sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="@id/borrowerRating">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="65dp"
+                        android:text="LENDER RATING:"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:layout_marginTop="3dp"
+                        android:src="@drawable/rating2"/>
+
+                </LinearLayout>
 
 
 
