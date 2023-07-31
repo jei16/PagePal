@@ -58,10 +58,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 R.id.pals -> replaceFragment(PalFragment())
                 else->{
 
+                }
+
+
             }
-
-
-        }
             true
         }
 
@@ -92,14 +92,18 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.sliding_menu_settings -> {
                 profileDrawer.findViewById<ViewGroup>(R.id.main_container)?.removeAllViews()
                 supportFragmentManager.beginTransaction()
-                .replace(R.id.main_container, SettingsFragment()).commit()}
-            R.id.sliding_menu_borrowandlending -> {
+                    .replace(R.id.main_container, SettingsFragment()).commit()}
+            R.id.sliding_menu_borrow -> {
                 profileDrawer.findViewById<ViewGroup>(R.id.main_container)?.removeAllViews()
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.main_container, BorrowFragment()).commit()}
+            R.id.sliding_menu_lending -> {
+                profileDrawer.findViewById<ViewGroup>(R.id.main_container)?.removeAllViews()
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.main_container, LendingFragment()).commit()}
 
             R.id.sliding_menu_logout -> {
-               logoutUser()
+                logoutUser()
             }
 
         }

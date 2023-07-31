@@ -6,13 +6,13 @@
 
     <corners
         android:topLeftRadius="0dp"
-        android:topRightRadius="35dp"
+        android:topRightRadius="20dp"
         android:bottomLeftRadius="0dp"
-        android:bottomRightRadius="35dp" />
+        android:bottomRightRadius="20dp" />
     <stroke
         android:width="5dp"
         android:color="@color/purple" />
 
-    </shape>
+</shape>
 
 

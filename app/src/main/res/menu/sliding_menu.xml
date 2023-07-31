@@ -13,11 +13,11 @@
         android:checkableBehavior="single">
 
 
-        <item
-            android:id="@+id/sliding_menu_help"
-            android:icon="@drawable/help1"
-            android:title="Help"
-            />
+        <!--        <item-->
+        <!--            android:id="@+id/sliding_menu_help"-->
+        <!--            android:icon="@drawable/help1"-->
+        <!--            android:title="Help"-->
+        <!--            />-->
 
         <item
             android:id="@+id/sliding_menu_settings"
@@ -29,36 +29,41 @@
     <group>
         <item android:title="Features">
 
-        <menu>
+            <menu>
 
-        <item
-            android:id="@+id/sliding_menu_borrowandlending"
-            android:icon="@drawable/borroww"
-            android:title="Borrow and Lending"/>
+                <item
+                    android:id="@+id/sliding_menu_borrow"
+                    android:icon="@drawable/borrowa"
+                    android:title="Borrow Books"/>
 
-        <item
-            android:id="@+id/sliding_menu_buynsell"
-            android:icon="@drawable/buyandsell"
-            android:title="Buy and Sell"/>
+                <item
+                    android:id="@+id/sliding_menu_lending"
+                    android:icon="@drawable/lending1"
+                    android:title="Lend Books"/>
+
+                <!--        <item-->
+                <!--            android:id="@+id/sliding_menu_buynsell"-->
+                <!--            android:icon="@drawable/buyandsell"-->
+                <!--            android:title="Buy and Sell"/>-->
 
 
-        <item
-            android:id="@+id/sliding_menu_community"
-            android:icon="@drawable/community"
-            android:title="Community"
-            />
+                <!--        <item-->
+                <!--            android:id="@+id/sliding_menu_community"-->
+                <!--            android:icon="@drawable/community"-->
+                <!--            android:title="Community"-->
+                <!--            />-->
 
-        </menu>
+            </menu>
 
-    </item>
+        </item>
     </group>
 
     <group>
-                <item
-                    android:id="@+id/sliding_menu_logout"
-                    android:icon="@drawable/logout"
-                    android:title="Logout"
-                    />
+        <item
+            android:id="@+id/sliding_menu_logout"
+            android:icon="@drawable/logout"
+            android:title="Logout"
+            />
     </group>
 
 

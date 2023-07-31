@@ -1,6 +1,8 @@
 package com.example.pagepal
 
 import LendBooksInfoAdapter
+import android.annotation.SuppressLint
+
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
@@ -10,6 +12,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.pagepal.databinding.FragmentBorrowPageBinding
@@ -34,6 +37,7 @@ class BorrowFragment : Fragment(), LendBooksInfoAdapter.OnItemClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        infoList = arrayListOf()
 
     }
 
@@ -48,6 +52,11 @@ class BorrowFragment : Fragment(), LendBooksInfoAdapter.OnItemClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         sharedViewModel = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
+        sharedViewModel.borrowingItems.observe(viewLifecycleOwner, Observer { items ->
+            infoList.clear()
+            infoList.addAll(items)
+            binding.postedlendbooks.adapter?.notifyDataSetChanged()
+        })
 
 
         binding.btnBorrow.setOnClickListener {
@@ -79,6 +88,7 @@ class BorrowFragment : Fragment(), LendBooksInfoAdapter.OnItemClickListener {
 
     private fun fetchData() {
         firebaseReference.addValueEventListener(object : ValueEventListener {
+            @SuppressLint("NotifyDataSetChanged")
             override fun onDataChange(snapshot: DataSnapshot) {
                 infoList.clear()
                 if (snapshot.exists()) {
@@ -123,12 +133,9 @@ class BorrowFragment : Fragment(), LendBooksInfoAdapter.OnItemClickListener {
         if (requestCode == DETAILED_INFO_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
             val position = data?.getIntExtra("position", -1)
             if (position != null && position != -1) {
-                // Remove the item from the infoList
                 val removedItem = infoList.removeAt(position)
-                // Notify the adapter of the item removal
-                binding.postedlendbooks.adapter?.notifyItemRemoved(position)
-
-                // Add the removed item to the SharedViewModel
+                // Check if binding is null before using it
+                binding?.postedlendbooks?.adapter?.notifyItemRemoved(position)
                 sharedViewModel.addRemovedItem(removedItem)
             }
         }

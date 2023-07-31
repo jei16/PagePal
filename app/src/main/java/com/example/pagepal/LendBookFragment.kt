@@ -88,10 +88,10 @@ class LendBookFragment : Fragment() {
 
         binding.imgOfbook.setOnClickListener {
 
-                val postabookPageContainer = requireActivity().findViewById<ViewGroup>(R.id.post_a_book_lendingPage)
+            val postabookPageContainer = requireActivity().findViewById<ViewGroup>(R.id.post_a_book_lendingPage)
 
 
-                postabookPageContainer?.removeAllViews()
+            postabookPageContainer?.removeAllViews()
             val imagePickerFragment = ImagePickerPABLendPageFragment()
             // Start the fragment with a request code
             imagePickerFragment.setTargetFragment(this, IMAGE_PICKER_REQUEST_CODE)
@@ -103,10 +103,10 @@ class LendBookFragment : Fragment() {
 
         binding.pickedimg.setOnClickListener {
 
-//                val postabookPageContainer = requireActivity().findViewById<ViewGroup>(R.id.post_a_book_lendingPage)
-//
-//
-//                postabookPageContainer?.removeAllViews()
+            val postabookPageContainer = requireActivity().findViewById<ViewGroup>(R.id.post_a_book_lendingPage)
+
+
+            postabookPageContainer?.removeAllViews()
             val imagePickerFragment = ImagePickerPABLendPageFragment()
             // Start the fragment with a request code
             imagePickerFragment.setTargetFragment(this, IMAGE_PICKER_REQUEST_CODE)
@@ -131,7 +131,7 @@ class LendBookFragment : Fragment() {
         lendBookViewModel = ViewModelProvider(requireActivity())[LendBookViewModel::class.java]
 
         // Retrieve the image URI from the arguments
-       val imageUri = arguments?.getParcelable<Uri>(ARG_IMAGE_URI)
+        val imageUri = arguments?.getParcelable<Uri>(ARG_IMAGE_URI)
 
         // Check if the imageUri is not null and set it to the pickedimg ImageView
         imageUri?.let { uri ->

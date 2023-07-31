@@ -10,9 +10,9 @@
         android:title="Pals"
         android:icon="@drawable/baseline_local_parking_24"
         />
-    <item
-        android:id="@+id/points"
-        android:title="Points"
-        android:icon="@drawable/pointssss"
-        />
+    <!--    <item-->
+    <!--        android:id="@+id/points"-->
+    <!--        android:title="Points"-->
+    <!--        android:icon="@drawable/pointssss"-->
+    <!--        />-->
 </menu>
